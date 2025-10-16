@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Place Order — Bakery Delight</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER (same) -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="D:\images 2\ba6b4943083c232b08e7085ef95ce6a6-removebg-preview.png" alt="logo">
+        <h1>Bakery</h1>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html#home">HOME</a>
+        <a href="index.html#menu">MENU</a>
+        <a href="index.html#visit">VISIT</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">CONTACT</a>
+      </nav>
+
+      <a class="cta" href="order.html">ORDER NOW</a>
+    </div>
+  </header>
+
+  <!-- ORDER HERO -->
+  <section class="hero" style="min-height:260px;">
+    <div class="bg" style="background-position:center 30%; filter: blur(0.6px) saturate(1.05);"></div>
+    <div class="hero-content container" style="padding:26px 36px;">
+      <p class="subtitle">Place your order — we'll prepare it fresh</p>
+      <h2 style="font-size:30px">Order Page</h2>
+      <p style="color:var(--muted); margin-top:8px">Fill the form below with your details and desired items. (Design-only — no actual sending)</p>
+    </div>
+  </section>
+
+  <!-- ORDER FORM -->
+  <main class="container section">
+    <div class="order-wrap">
+      <form onsubmit="event.preventDefault(); alert('طلبك تم (تصميمي) — لا يتم الإرسال فعليًا.');" autocomplete="off">
+        <div style="display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap">
+          <div style="flex:1; min-width:220px;">
+            <label style="font-weight:600; margin-bottom:6px; display:block">Full name</label>
+            <input class="input" type="text" placeholder="Your full name" required>
+          </div>
+
+          <div style="flex:1; min-width:220px;">
+            <label style="font-weight:600; margin-bottom:6px; display:block">Phone number</label>
+            <input class="input" type="tel" placeholder="+964 77x xxx xxxx" required>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <label style="font-weight:600; margin-bottom:6px; display:block">Delivery address</label>
+          <input class="input" type="text" placeholder="Street, Building, District" required>
+        </div>
+
+        <div style="margin-top:12px;">
+          <label style="font-weight:600; margin-bottom:6px; display:block">Choose item</label>
+          <select class="select" required>
+            <option value="">-- Select an item --</option>
+            <option>Croissant (Nutella)</option>
+            <option>Chocolate Muffin</option>
+            <option>Cookies (6 pcs)</option>
+            <option>Cupcake (Vanilla)</option>
+            <option>Custom Box (Mix)</option>
+          </select>
+        </div>
+
+        <div style="margin-top:12px;">
+          <label style="font-weight:600; margin-bottom:6px; display:block">Quantity</label>
+          <input class="input" type="number" min="1" value="1" required>
+        </div>
+
+        <div style="margin-top:12px;">
+          <label style="font-weight:600; margin-bottom:6px; display:block">Notes (optional)</label>
+          <textarea class="textarea" placeholder="Any extra notes (e.g. no nuts, delivery time)"></textarea>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; align-items:center">
+          <button class="btn-large" type="submit">Place Order</button>
+          <a href="index.html" class="cta" style="padding:8px 14px; border-radius:10px; background:transparent; color:var(--accent); border:1px solid rgba(139,74,25,0.08)">Back to Home</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- small info block -->
+    <div style="margin-top:18px; display:flex; gap:18px; flex-wrap:wrap; align-items:center;">
+        <div style="flex:1; min-width:220px; background:var(--panel); padding:14px; border-radius:10px;">
+          <strong>Pickup option</strong>
+          <p style="color:var(--muted); margin-top:8px;">Select pickup if you prefer to collect your order from the shop.</p>
+        </div>
+  
+        <div style="flex:1; min-width:220px; background:var(--panel); padding:14px; border-radius:10px;">
+          <strong>Delivery</strong>
+          <p style="color:var(--muted); margin-top:8px;">Delivery available within city limits. Delivery fees may apply.</p>
+        </div>
+      </div>
+  
+    </main>
+  
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Bakery Delight. All rights reserved.</p>
+      </div>
+    </footer>
+  
+    <button id="backTop" aria-label="back to top">↑</button>
+  
+  <script>
+    // back to top
+    (function(){
+      const bt = document.getElementById('backTop');
+      window.addEventListener('scroll', ()=> {
+        if(window.scrollY > 300){ bt.style.display = 'grid'; } else { bt.style.display='none'; }
+      });
+      bt.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+    })();
+  </script>
+  
+  </body>
+  </html>
